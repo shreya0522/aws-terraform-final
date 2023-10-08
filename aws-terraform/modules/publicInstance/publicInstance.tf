@@ -11,14 +11,13 @@ data "aws_ami" "latest_ubuntu" {
   owners = ["099720109477"]
 }
 
-resource "aws_instance" "bastion" {
-  # count           = length(var.server_name)
+resource "aws_instance" "public_instance" {
   ami             = data.aws_ami.latest_ubuntu.id
   instance_type   = var.instance_type
-  subnet_id       = var.public_subnet_id #[count.index]
+  subnet_id       = var.public_subnet_id
   security_groups = var.security_group
   key_name        = var.key_name
   tags = {
-    Name = var.server_name #[count.index]
+    Name = var.server_name
   }
 }

@@ -6,7 +6,6 @@ resource "aws_subnet" "private_subnet" {
   map_public_ip_on_launch = false
 
   tags = {
-    #count = length(var.private_subnet_name)
     Name = var.private_subnet_name[count.index]
   }
 }

@@ -16,12 +16,10 @@ variable "public_subnet_cidr" {
 
 variable "public_az" {
   type = list(string)
-  # default = ["us-east-1a", "us-east-1c"]
 }
 
 variable "public_subnet_name" {
   type = list(string)
-  # default = ["ninja-pub-sub-01/02", "ninja-pub-sub-02/02"]
 }
 
 # -----------------------------------------
@@ -69,10 +67,6 @@ variable "private_route_table_name" {
 }
 
 #-----------bastion & private servers----------------
-variable "ami_id" {
-  type = string
-}
-
 variable "instance_type" {
   type = string
 }
@@ -83,37 +77,4 @@ variable "server_name" {
 
 variable "private_server_name" {
   type = list(string)
-}
-
-
-#-----------------------------------------
-
-variable "launch_template_name" {
-  type = string
-}
-
-variable "ebs_volume_size" {
-  type = string
-}
-
-
-
-variable "image_id" {
-  type = string
-}
-
-variable "name_prefix" {
-  type = string
-}
-
-variable "max_size" {
-  type = number
-}
-
-variable "min_size" {
-  type = number
-}
-
-variable "desired_capacity" {
-  type = number
 }

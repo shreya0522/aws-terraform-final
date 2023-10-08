@@ -7,7 +7,6 @@ resource "aws_subnet" "public_subnet" {
 
 
   tags = {
-    # count = length(var.public_subnet_name)
     Name = var.public_subnet_name[count.index]
   }
 }

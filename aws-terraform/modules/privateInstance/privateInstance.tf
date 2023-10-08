@@ -7,5 +7,6 @@ resource "aws_instance" "private_server" {
   security_groups = var.security_group
   tags = {
     Name = var.private_server_name[count.index]
+    Type = "nginx"
   }
 }
